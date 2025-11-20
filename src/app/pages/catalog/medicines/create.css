@@ -1,0 +1,66 @@
+.page-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 24px 28px;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+  max-width: 520px;
+  margin: 32px auto;
+}
+
+.page-card h2 {
+  margin: 0 0 20px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1d4ed8;
+}
+
+.field {
+  margin-bottom: 14px;
+}
+
+.field label {
+  display: block;
+  font-size: 13px;
+  color: #475569;
+  margin-bottom: 4px;
+}
+
+.field input {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #cbd5f5;
+  font-size: 14px;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+.actions button {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: none;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.actions button[type='submit'] {
+  background: #2563eb;
+  color: white;
+}
+
+.actions .secondary {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.error {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #b91c1c;
+}

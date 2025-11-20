@@ -1,0 +1,74 @@
+<section>
+  <div class="farm-page-header">
+    <h2 class="farm-section-title">
+      Clientes registrados
+    </h2>
+
+    <button
+      routerLink="/customers/new"
+      class="farm-btn farm-btn-primary"
+    >
+      + Nuevo cliente
+    </button>
+  </div>
+
+  <!-- Mensaje mientras carga -->
+  <div *ngIf="isLoading" class="farm-loading">
+    Cargando clientes...
+  </div>
+
+  <!-- Mensaje si no hay clientes -->
+  <div
+    *ngIf="!isLoading && customers.length === 0"
+    class="farm-empty"
+  >
+    No hay clientes registrados.
+  </div>
+
+  <!-- Tabla cuando hay datos -->
+  <div
+    *ngIf="!isLoading && customers.length > 0"
+    class="farm-table-card"
+  >
+    <table class="farm-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Documento</th>
+          <th>Nombre</th>
+          <th>Teléfono</th>
+          <th>Email</th>
+          <th>Dirección</th>
+          <th class="farm-col-actions">Acciones</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let c of customers">
+          <td>{{ c.id }}</td>
+          <td>{{ c.document }}</td>
+          <td>{{ c.name }}</td>
+          <td>{{ c.phone }}</td>
+          <td>{{ c.email }}</td>
+          <td>{{ c.address }}</td>
+
+          <td class="farm-actions">
+            <button
+              [routerLink]="['/customers/edit', c.id]"
+              class="farm-btn farm-btn-secondary"
+            >
+              Editar
+            </button>
+
+            <button
+              [routerLink]="['/customers/delete', c.id]"
+              class="farm-btn farm-btn-danger"
+            >
+              Eliminar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

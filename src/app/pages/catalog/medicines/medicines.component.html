@@ -1,0 +1,65 @@
+<section class="med-page">
+  <!-- Título + botón -->
+  <div class="farm-page-header">
+    <h2 class="farm-section-title">
+      Catálogo de medicamentos
+    </h2>
+
+    <button
+      class="farm-btn farm-btn-primary"
+      routerLink="/catalog/medicines/new"
+    >
+      + Nuevo medicamento
+    </button>
+  </div>
+
+  <!-- Mensaje mientras carga -->
+  <div *ngIf="isLoading" class="med-info">
+    Cargando medicamentos...
+  </div>
+
+  <!-- Mensaje si no hay registros -->
+  <div *ngIf="!isLoading && medicines.length === 0" class="med-info">
+    No hay medicamentos registrados.
+  </div>
+
+  <!-- Tarjeta con tabla -->
+  <div *ngIf="!isLoading && medicines.length > 0" class="page-card">
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Precio venta</th>
+            <th class="med-col-actions">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let m of medicines">
+            <td>{{ m.id }}</td>
+            <td>{{ m.name }}</td>
+            <td>{{ m.description }}</td>
+            <td>{{ m.sale_price | currency:'COP':'symbol' }}</td>
+            <td class="med-actions">
+              <button
+                [routerLink]="['/catalog/medicines/edit', m.id]"
+                class="farm-btn farm-btn-secondary"
+              >
+                Editar
+              </button>
+
+              <button
+                [routerLink]="['/catalog/medicines/delete', m.id]"
+                class="farm-btn farm-btn-danger"
+              >
+                Eliminar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

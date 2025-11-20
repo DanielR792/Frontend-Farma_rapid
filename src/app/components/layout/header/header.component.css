@@ -1,0 +1,46 @@
+.app-header {
+  height: 72px;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e2e8f0;
+  background: #ffffff;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.header-left h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.header-left p {
+  margin: 0;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.header-right {
+  text-align: right;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.header-right span {
+  display: block;
+  font-weight: 600;
+  color: #0f172a;
+}

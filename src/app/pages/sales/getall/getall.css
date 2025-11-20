@@ -1,0 +1,118 @@
+/* Contenedor de la página de ventas */
+.sales-page {
+  padding: 0 40px;
+}
+
+/* Título + botón, igual que en catálogo/clientes */
+.farm-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 16px 0 12px;
+}
+
+.farm-section-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  flex: 1;
+  color: #1d4ed8;
+}
+
+/* Tarjeta de la tabla */
+.sales-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 24px 28px;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.sales-table-wrapper {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+/* Tabla */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: #020617;
+}
+
+/* Encabezado: texto blanco sobre fondo negro */
+thead th {
+  padding: 12px 16px;
+  font-size: 14px;
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+/* Cuerpo: texto oscuro */
+tbody td {
+  padding: 12px 16px;
+  font-size: 14px;
+  color: #0f172a !important;
+}
+
+tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+/* Columna de acciones */
+.sales-col-actions {
+  width: 190px;
+  text-align: center;
+}
+
+.sales-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+/* Mensajes (cargando / vacío) */
+.sales-info {
+  font-size: 14px;
+  color: #64748b;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+/* Botones reutilizables (si no los tienes globales) */
+.farm-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 13px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s;
+}
+
+.farm-btn-primary {
+  background: linear-gradient(135deg, #2563eb, #4f46e5);
+  color: #ffffff;
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.45);
+}
+
+.farm-btn-secondary {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.farm-btn-danger {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.farm-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.2);
+}

@@ -1,0 +1,114 @@
+<!-- src/app/pages/customers/create/create.html -->
+<section class="p-8">
+  <h2 class="text-center text-sky-700 text-xl font-semibold mb-6">
+    Nuevo cliente
+  </h2>
+
+  <form
+    class="max-w-xl mx-auto border border-slate-200 rounded-xl bg-white shadow-sm p-6 space-y-4"
+    (ngSubmit)="onSubmit()"
+  >
+    <!-- Mensaje de error general -->
+    <div *ngIf="generalError" class="text-center text-rose-600 text-sm mb-2">
+      {{ generalError }}
+    </div>
+
+    <!-- Documento -->
+    <div>
+      <label class="block text-sm font-medium text-slate-700 mb-1">Documento</label>
+      <input
+        type="text"
+        name="document"
+        [(ngModel)]="customer.document"
+        class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm
+               focus:outline-none focus:ring-2 focus:ring-sky-500 text-slate-900 bg-white"
+        required
+      />
+      <div *ngIf="validationErrors['document']" class="text-rose-600 text-sm mt-1">
+        {{ validationErrors['document'][0] }}
+      </div>
+    </div>
+
+    <!-- Nombre -->
+    <div>
+      <label class="block text-sm font-medium text-slate-700 mb-1">Nombre completo</label>
+      <input
+        type="text"
+        name="name"
+        [(ngModel)]="customer.name"
+        class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm
+               focus:outline-none focus:ring-2 focus:ring-sky-500 text-slate-900 bg-white"
+        required
+      />
+      <div *ngIf="validationErrors['name']" class="text-rose-600 text-sm mt-1">
+        {{ validationErrors['name'][0] }}
+      </div>
+    </div>
+
+    <!-- Teléfono -->
+    <div>
+      <label class="block text-sm font-medium text-slate-700 mb-1">Teléfono</label>
+      <input
+        type="text"
+        name="phone"
+        [(ngModel)]="customer.phone"
+        class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm
+               focus:outline-none focus:ring-2 focus:ring-sky-500 text-slate-900 bg-white"
+      />
+      <div *ngIf="validationErrors['phone']" class="text-rose-600 text-sm mt-1">
+        {{ validationErrors['phone'][0] }}
+      </div>
+    </div>
+
+    <!-- Email -->
+    <div>
+      <label class="block text-sm font-medium text-slate-700 mb-1">Email</label>
+      <input
+        type="email"
+        name="email"
+        [(ngModel)]="customer.email"
+        class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm
+               focus:outline-none focus:ring-2 focus:ring-sky-500 text-slate-900 bg-white"
+      />
+      <div *ngIf="validationErrors['email']" class="text-rose-600 text-sm mt-1">
+        {{ validationErrors['email'][0] }}
+      </div>
+    </div>
+
+    <!-- Dirección -->
+    <div>
+      <label class="block text-sm font-medium text-slate-700 mb-1">Dirección</label>
+      <input
+        type="text"
+        name="address"
+        [(ngModel)]="customer.address"
+        class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm
+               focus:outline-none focus:ring-2 focus:ring-sky-500 text-slate-900 bg-white"
+      />
+      <div *ngIf="validationErrors['address']" class="text-rose-600 text-sm mt-1">
+        {{ validationErrors['address'][0] }}
+      </div>
+    </div>
+
+    <!-- Botones -->
+    <div class="flex justify-between pt-4">
+      <button
+        type="button"
+        (click)="cancelar()"
+        class="px-4 py-2 rounded-lg border border-slate-300 text-sm text-slate-700 bg-white
+               hover:bg-slate-50"
+      >
+        Cancelar
+      </button>
+
+      <button
+        type="submit"
+        [disabled]="loading"
+        class="px-4 py-2 rounded-lg bg-sky-600 text-white text-sm hover:bg-sky-700
+               disabled:opacity-60 disabled:cursor-not-allowed"
+      >
+        {{ loading ? 'Guardando...' : 'Guardar cliente' }}
+      </button>
+    </div>
+  </form>
+</section>

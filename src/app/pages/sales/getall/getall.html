@@ -1,0 +1,70 @@
+<section class="sales-page">
+  <!-- Título + botón -->
+  <div class="farm-page-header">
+    <h2 class="farm-section-title">
+      Ventas registradas
+    </h2>
+
+    <button
+      class="farm-btn farm-btn-primary"
+      routerLink="/sales/new"
+    >
+      + Nueva venta
+    </button>
+  </div>
+
+  <!-- Mensaje mientras carga -->
+  <div *ngIf="isLoading" class="sales-info">
+    Cargando ventas...
+  </div>
+
+  <!-- Mensaje si no hay registros -->
+  <div *ngIf="!isLoading && items.length === 0" class="sales-info">
+    No hay ventas registradas.
+  </div>
+
+  <!-- Tabla solo cuando hay datos -->
+  <div *ngIf="!isLoading && items.length > 0" class="sales-card">
+    <div class="sales-table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Cliente (ID)</th>
+            <th>Fecha</th>
+            <th>Subtotal</th>
+            <th>Impuestos</th>
+            <th>Total</th>
+            <th class="sales-col-actions">Acciones</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let s of items">
+            <td>{{ s.id }}</td>
+            <td>{{ s.customer }}</td>
+            <td>{{ s.sale_date | date: 'yyyy-MM-dd HH:mm' }}</td>
+            <td>{{ s.subtotal | currency: 'COP':'symbol' }}</td>
+            <td>{{ s.total_taxes | currency: 'COP':'symbol' }}</td>
+            <td>{{ s.total_amount | currency: 'COP':'symbol' }}</td>
+            <td class="sales-actions">
+              <button
+                class="farm-btn farm-btn-secondary"
+                [routerLink]="['/sales/detail', s.id]"
+              >
+                Detalle
+              </button>
+
+              <button
+                class="farm-btn farm-btn-danger"
+                [routerLink]="['/sales/delete', s.id]"
+              >
+                Eliminar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

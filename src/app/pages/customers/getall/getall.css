@@ -1,0 +1,110 @@
+/* Contenedor título + botón */
+.farm-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+/* Título “Clientes registrados” */
+.farm-section-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  flex: 1;
+  color: #1d4ed8;
+}
+
+/* Mensajes de información */
+.farm-loading {
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: #64748b;
+  text-align: center;
+}
+
+.farm-empty {
+  margin-top: 16px;
+  text-align: center;
+  padding: 16px;
+  color: #64748b;
+}
+
+/* Tarjeta de la tabla */
+.farm-table-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+  padding: 16px 20px;
+}
+
+/* Tabla */
+.farm-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #0f172a; /* texto oscuro para que se vea bien */
+}
+
+.farm-table thead {
+  background: #020617;
+  color: #ffffff;
+}
+
+.farm-table th,
+.farm-table td {
+  padding: 10px 14px;
+  font-size: 14px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.farm-table tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+/* Columna de acciones */
+.farm-col-actions {
+  width: 170px;
+  text-align: center;
+}
+
+.farm-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+/* Botones genéricos */
+.farm-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 13px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s;
+}
+
+/* + Nuevo cliente */
+.farm-btn-primary {
+  background: linear-gradient(135deg, #2563eb, #4f46e5);
+  color: #ffffff;
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.45);
+}
+
+/* Editar */
+.farm-btn-secondary {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+/* Eliminar */
+.farm-btn-danger {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.farm-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.2);
+}

@@ -1,0 +1,52 @@
+<!-- src/app/pages/customers/prescriptions/getall.html -->
+<section class="p-8">
+  <h2 class="text-center text-sky-700 text-xl font-semibold mb-6">
+    Recetas y medicamentos recetados
+  </h2>
+
+  <!-- Mensaje de carga -->
+  <div *ngIf="isLoading" class="text-center text-slate-500">
+    Cargando recetas...
+  </div>
+
+  <!-- Mensaje si no hay datos -->
+  <div *ngIf="!isLoading && items.length === 0" class="text-center text-slate-500">
+    No hay recetas registradas.
+  </div>
+
+  <!-- Tabla con datos -->
+  <div
+    *ngIf="!isLoading && items.length > 0"
+    class="max-w-6xl mx-auto border border-slate-200 rounded-xl overflow-hidden shadow-sm bg-white"
+  >
+    <table class="w-full text-sm">
+      <thead class="bg-slate-900 text-white">
+        <tr>
+          <th class="py-3 px-4 text-left">ID</th>
+          <th class="py-3 px-4 text-left">Cliente</th>
+          <th class="py-3 px-4 text-left">Fecha</th>
+          <th class="py-3 px-4 text-left">Medicamento</th>
+          <th class="py-3 px-4 text-left">Cantidad</th>
+        </tr>
+      </thead>
+
+      <tbody class="divide-y divide-slate-200">
+        <tr *ngFor="let item of items" class="hover:bg-slate-50">
+          <td class="py-3 px-4">{{ item.id }}</td>
+          <td class="py-3 px-4">
+            {{ item.prescription.customer.name }}
+          </td>
+          <td class="py-3 px-4">
+            {{ item.prescription.issue_date }}
+          </td>
+          <td class="py-3 px-4">
+            {{ item.medicine }}
+          </td>
+          <td class="py-3 px-4">
+            {{ item.quantity }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
