@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Frontend
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.10.
@@ -57,3 +58,7 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+=======
+# Frontend-Farma_rapid
+Proyecto farmacia
+>>>>>>> 3daca94e4a62801364e1d6b60a345043425a5300
